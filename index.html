@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blessy Logistics</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+
+body{
+    line-height:1.6;
+}
+
+/* HEADER */
+header{
+    background:#111;
+    color:#fff;
+    padding:15px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+header h2{
+    color:orange;
+}
+
+nav a{
+    color:#fff;
+    margin-left:20px;
+    text-decoration:none;
+}
+
+/* HERO */
+.hero{
+    height:95vh;
+    background: url("images/truck1.jpeg") no-repeat center center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+}
+
+.hero-content{
+    background:rgba(0,0,0,0.65);
+    padding:40px;
+    border-radius:12px;
+}
+
+.hero h1{
+    font-size:42px;
+}
+
+.motto{
+    color:orange;
+    font-weight:bold;
+    font-size:18px;
+    margin:10px 0;
+}
+
+.hero button{
+    margin:10px;
+    padding:12px 25px;
+    border:none;
+    background:orange;
+    color:#fff;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+/* SECTIONS */
+section{
+    padding:60px 50px;
+}
+
+.services, .why{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.card{
+    flex:1;
+    background:#f4f4f4;
+    padding:25px;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+/* FORM */
+form{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    max-width:400px;
+}
+
+form input, form select, form textarea{
+    padding:10px;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+form button{
+    background:orange;
+    color:#fff;
+    border:none;
+    padding:12px;
+    border-radius:5px;
+}
+.whatsapp-btn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:32px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.whatsapp-btn:hover{
+    transform:scale(1.1);
+}
+
+}
+
+/* FOOTER */
+footer{
+    background:#111;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+}
+
+@media(max-width:768px){
+    .services, .why{
+        flex-direction:column;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>Blessy Logistics</h2>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Fast, Reliable Truck Logistics You Can Trust</h1>
+        <p class="motto">Blessy Logistics is on the move</p>
+        <p>From 2-tonne to 10-tonne trucks for all your transport needs</p>
+        <button onclick="scrollToForm()">Get a Quote</button>
+        <button onclick="scrollToForm()">Book Now</button>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+    <h2>About Us</h2>
+    <p>
+        Blessy Logistics delivers reliable, affordable, and professional transport services.
+        We ensure safe handling, timely delivery, and complete customer satisfaction.
+    </p>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="card">
+            <h3>2-Tonne Trucks</h3>
+            <p>Perfect for small deliveries and quick transport jobs.</p>
+        </div>
+
+        <div class="card">
+            <h3>5-Tonne Trucks</h3>
+            <p>Ideal for medium loads and business transportation.</p>
+        </div>
+
+        <div class="card">
+            <h3>10-Tonne Trucks</h3>
+            <p>Best for heavy cargo and large-scale logistics.</p>
+        </div>
+    </div>
+</section>
+
+<!-- WHY -->
+<section>
+    <h2>Why Choose Us</h2>
+    <div class="why">
+        <div class="card">Fast Delivery</div>
+        <div class="card">Affordable Pricing</div>
+        <div class="card">Experienced Drivers</div>
+        <div class="card">Nationwide Coverage</div>
+        <div class="card">24/7 Availability</div>
+    </div>
+</section>
+
+<!-- FORM -->
+<section id="contact">
+    <h2>Request a Quote</h2>
+    <form onsubmit="submitForm(event)">
+        <input type="text" placeholder="Your Name" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <input type="text" placeholder="Pickup Location" required>
+        <input type="text" placeholder="Delivery Location" required>
+
+        <select required>
+            <option value="">Select Load Size</option>
+            <option>2-Tonne</option>
+            <option>5-Tonne</option>
+            <option>10-Tonne</option>
+        </select>
+
+        <textarea placeholder="Describe the load (e.g. furniture, cement, groceries)" required></textarea>
+
+        <button type="submit">Request a Quote Now</button>
+    </form>
+</section>
+
+<!-- CONTACT -->
+<section>
+    <h2>Contact Us</h2>
+    <p>📞 0772 782 230</p>
+    <p>📍 Masasa, Zimbabwe</p>
+
+    <iframe 
+        src="https://maps.google.com/maps?q=Masasa%20Zimbabwe&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+        width="100%" height="300" style="border:0;">
+    </iframe>
+</section>
+
+<footer>
+    <p>© 2026 Blessy Logistics. All Rights Reserved.</p>
+</footer>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<a class="whatsapp-btn" href="https://wa.me/263772782230" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+<script>
+function scrollToForm(){
+    document.getElementById("contact").scrollIntoView({behavior:"smooth"});
+}
+
+function submitForm(e){
+    e.preventDefault();
+
+    let inputs = document.querySelectorAll("form input, form select, form textarea");
+
+    let name = inputs[0].value;
+    let phone = inputs[1].value;
+    let pickup = inputs[2].value;
+    let delivery = inputs[3].value;
+    let loadSize = inputs[4].value;
+    let description = inputs[5].value;
+
+    let message = `Hello Blessy Logistics,%0A
+Name: ${name}%0A
+Phone: ${phone}%0A
+Pickup: ${pickup}%0A
+Delivery: ${delivery}%0A
+Load Size: ${loadSize}%0A
+Load Details: ${description}`;
+
+    let url = `https://wa.me/263772782230?text=${message}`;
+
+    window.open(url, "_blank");
+}
+</script>
+</body>
+</html>
